@@ -61,4 +61,4 @@ This project is licensed under the [MIT License](LICENSE). You are free
 to use, modify, and share this project with proper attribution.
 ## About Me
 Hi there! I'm **Eduardo L. Vasquez**, also known as **Eddy**. I’m a Data Analyst and passionate Graphic Designer on a mission to
-blend boththe analytical world and the world of design and make working with data enjoyable and engaging!
+blend both the analytical world and the world of design to make working with data enjoyable and engaging!
