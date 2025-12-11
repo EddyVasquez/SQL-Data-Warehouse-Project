@@ -1,13 +1,13 @@
 /*
 =========================================================
 
-Stored Procedure: Load Bronze Layer (Source -> Betta)
+Stored Procedure: Load Beta Layer (Source -> Beta)
 
 =========================================================
 
 Script Purpose:
 
-This stored procedure loads data into the 'betta' schema from external .csv files.
+This stored procedure loads data into the 'beta' schema from external .csv files.
 It perfroms the following actions:
 
 -Truncates the beta tables before loading data.
@@ -29,7 +29,7 @@ BEGIN
     BEGIN TRY
 
         PRINT '======================================================================================';
-        PRINT 'Loading Betta Layer';
+        PRINT 'Loading Beta Layer';
         PRINT '======================================================================================';
 
         PRINT '--------------------------------------------------------------------------------------';
