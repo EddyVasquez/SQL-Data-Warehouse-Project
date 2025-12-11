@@ -36,7 +36,7 @@ GO
 USE DataWarehouse;
 GO
 
-    CREATE SCHEMA betta;
+    CREATE SCHEMA beta;
     GO
     CREATE SCHEMA gamma;
     GO
