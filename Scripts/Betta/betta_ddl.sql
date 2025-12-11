@@ -1,14 +1,14 @@
 /*
 =========================================================
 
-DDL Script: Create Betta Tables
+DDL Script: Create Beta Tables
 
 =========================================================
 
 Script Purpose:
 
-The script creates tables in the 'betta' schema, dropping existing tables if they already exist.
-Run this script to re-define the DDL structure of 'betta' Tables.
+The script creates tables in the 'beta' schema, dropping existing tables if they already exist.
+Run this script to re-define the DDL structure of 'beta' Tables.
 
 =========================================================
 */
