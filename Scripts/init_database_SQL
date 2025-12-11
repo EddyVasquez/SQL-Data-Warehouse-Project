@@ -17,6 +17,7 @@ Running this script will drop the entore 'DataWarehouse' database if it exists.
 All dta in the database will be permanently delted. Procees with caution and ensure you have proper
 backups before running this script.
 
+=========================================================
 */
 
 
