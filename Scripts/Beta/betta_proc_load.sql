@@ -24,7 +24,7 @@ Usage Example:
 =========================================================
 */
 
-CREATE OR ALTER PROCEDURE beta.load_betta AS
+CREATE OR ALTER PROCEDURE beta.load_beta AS
 BEGIN
     BEGIN TRY
 
