@@ -47,6 +47,7 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
         PRINT '>> Truncating Table: beta.crm_prd_info';
@@ -60,6 +61,7 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
         PRINT '>> Truncating Table: beta.crm_sales_details';
@@ -73,6 +75,7 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
         PRINT '--------------------------------------------------------------------------------------';
@@ -90,6 +93,7 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
         PRINT '>> Truncating Table: beta.erp_LOC_A101';
@@ -103,6 +107,7 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
         PRINT '>> Truncating Table: beta.erp_PX_CAT_G1V2';
@@ -116,14 +121,15 @@ BEGIN
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
+            ROWTERMINATOR = '0x0D0A',
             TABLOCK);
     END TRY
     BEGIN CATCH
         PRINT '======================================================================================';
         PRINT 'ERROR OCCURED DURING LOADING BETA LAYER';
         PRINT 'Error Message' + ERROR_MESSAGE();
-        PRINT 'Error Message' + CAST(ERROR_NUMBER() AS NVARCHAR);
-        PRINT 'Error Message' + CAST(ERROR_STATE() AS NVARCHAR);
+        PRINT 'Error Message' + CAST(ERROR_NUMBER() AS NVARCHAR(10));
+        PRINT 'Error Message' + CAST(ERROR_STATE() AS NVARCHAR(10));
         PRINT '======================================================================================';
     END CATCH
 END
