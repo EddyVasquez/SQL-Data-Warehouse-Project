@@ -52,7 +52,7 @@ CREATE TABLE beta.crm_sales_details(
     sls_due_dt INT,
     sls_sales INT,
     sls_quantity INT,
-    sls_price INT,);
+    sls_price INT);
 
 IF OBJECT_ID('beta.erp_cust_az12', 'U') IS NOT NULL
 DROP TABLE beta.erp_cust_az12;
