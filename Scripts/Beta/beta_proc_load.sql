@@ -127,9 +127,9 @@ BEGIN
     BEGIN CATCH
         PRINT '======================================================================================';
         PRINT 'ERROR OCCURED DURING LOADING BETA LAYER';
-        PRINT 'Error Message' + ERROR_MESSAGE();
-        PRINT 'Error Message' + CAST(ERROR_NUMBER() AS NVARCHAR(10));
-        PRINT 'Error Message' + CAST(ERROR_STATE() AS NVARCHAR(10));
+        PRINT ERROR_MESSAGE();
+        PRINT CAST(ERROR_NUMBER() AS NVARCHAR);
+        PRINT CAST(ERROR_STATE() AS NVARCHAR);
         PRINT '======================================================================================';
     END CATCH
 END
