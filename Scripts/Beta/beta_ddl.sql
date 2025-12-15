@@ -26,7 +26,7 @@ CREATE TABLE beta.crm_cust_info(
     cst_lastname NVARCHAR (50),
     cst_marital_status NVARCHAR (50), 
     cst_gndr NVARCHAR (50), 
-    cst_create_date DATE);
+    cst_create_date VARCHAR(20));
         
 IF OBJECT_ID('beta.crm_cprd_info', 'U') IS NOT NULL
 DROP TABLE beta.crm_prd_info;
