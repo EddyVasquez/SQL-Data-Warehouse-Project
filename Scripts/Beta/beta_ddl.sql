@@ -28,7 +28,7 @@ CREATE TABLE beta.crm_cust_info(
     cst_gndr NVARCHAR (50), 
     cst_create_date VARCHAR(20));
         
-IF OBJECT_ID('beta.crm_cprd_info', 'U') IS NOT NULL
+IF OBJECT_ID('beta.crm_prd_info', 'U') IS NOT NULL
 DROP TABLE beta.crm_prd_info;
 
 CREATE TABLE beta.crm_prd_info(
