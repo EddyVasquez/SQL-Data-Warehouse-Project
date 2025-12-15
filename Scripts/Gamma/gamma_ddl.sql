@@ -1,3 +1,18 @@
+/*
+=========================================================
+
+DDL Script: Create Gamma Tables
+
+=========================================================
+
+Script Purpose:
+
+The script creates tables in the 'gamma' schema, dropping existing tables if they already exist.
+Run this script to re-define the DDL structure of 'gamma' Tables.
+
+=========================================================
+*/
+
 USE DataWarehouse;
 GO
 
