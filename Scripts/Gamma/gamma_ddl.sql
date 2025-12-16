@@ -26,8 +26,8 @@ CREATE TABLE gamma.crm_cust_info(
     cst_lastname NVARCHAR (50),
     cst_marital_status NVARCHAR (50), 
     cst_gndr NVARCHAR (50), 
-    cst_create_date VARCHAR(20)),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    cst_create_date VARCHAR(20),
+    dwh_create_date DATETIME2 DEFAULT GETDATE());
         
 IF OBJECT_ID('gamma.crm_prd_info', 'U') IS NOT NULL
 DROP TABLE gamma.crm_prd_info;
@@ -39,8 +39,8 @@ CREATE TABLE gamma.crm_prd_info(
     prd_cost INT,
     prd_line NVARCHAR (50), 
     prd_start_dt DATETIME, 
-    prd_end_dt DATETIME),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    prd_end_dt DATETIME,
+    dwh_create_date DATETIME2 DEFAULT GETDATE());
 
 IF OBJECT_ID('gamma.crm_sales_details', 'U') IS NOT NULL
 DROP TABLE gamma.crm_sales_details;
@@ -54,8 +54,8 @@ CREATE TABLE gamma.crm_sales_details(
     sls_due_dt INT,
     sls_sales INT,
     sls_quantity INT,
-    sls_price INT),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    sls_price INT,
+    dwh_create_date DATETIME2 DEFAULT GETDATE());
 
 IF OBJECT_ID('gamma.erp_cust_az12', 'U') IS NOT NULL
 DROP TABLE gamma.erp_cust_az12;
@@ -63,16 +63,16 @@ DROP TABLE gamma.erp_cust_az12;
 CREATE TABLE gamma.erp_cust_az12(
     CID	NVARCHAR (50),
     BDATE DATE,
-    GEN NVARCHAR (50)),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    GEN NVARCHAR (50),
+    dwh_create_date DATETIME2 DEFAULT GETDATE());
 
 IF OBJECT_ID('gamma.erp_loc_a101', 'U') IS NOT NULL
 DROP TABLE gamma.erp_loc_a101;
 
 CREATE TABLE gamma.erp_loc_a101(
     CID	NVARCHAR (50),
-    CNTRY NVARCHAR (50)),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    CNTRY NVARCHAR (50),
+        dwh_create_date DATETIME2 DEFAULT GETDATE());
 
 IF OBJECT_ID('gamma.erp_px_cat_g1v2', 'U') IS NOT NULL
 DROP TABLE gamma.erp_px_cat_g1v2;
@@ -81,6 +81,6 @@ CREATE TABLE gamma.erp_px_cat_g1v2(
     ID NVARCHAR (50),
     CAT	NVARCHAR (50),
     SUBCAT	NVARCHAR (50),
-    MAINTENANCE NVARCHAR (50)),
-    dwh_create_date DATETIME2 DEFAULT GETDATE();
+    MAINTENANCE NVARCHAR (50),
+    dwh_create_date DATETIME2 DEFAULT GETDATE());
 GO
