@@ -10,6 +10,12 @@ Script Purpose:
 The script creates tables in the 'gamma' schema, dropping existing tables if they already exist.
 Run this script to re-define the DDL structure of 'gamma' Tables.
 
+Data Enrichment:
+
+ADDED METADATA > Derived Column > (Conformed Key) 'prd_key_master' IN crm_sales_details Table.
+ADDED METADATA > DATETIME2 > Data Warehouse Create Date > 'dwh_create_date'.
+Converted Data Type INT to DATE for cst_create_date, sls_order_dt sls_ship_dt and sls_due_dt.
+
 =========================================================
 */
 
@@ -26,8 +32,8 @@ CREATE TABLE gamma.crm_cust_info(
     cst_lastname NVARCHAR (50),
     cst_marital_status NVARCHAR (50), 
     cst_gndr NVARCHAR (50), 
-    cst_create_date VARCHAR(20),
-    dwh_create_date DATETIME2 DEFAULT GETDATE());
+    cst_create_date Date, -- FIXED DATA TYPE FROM INT TO DATE
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
         
 IF OBJECT_ID('gamma.crm_prd_info', 'U') IS NOT NULL
 DROP TABLE gamma.crm_prd_info;
@@ -40,7 +46,7 @@ CREATE TABLE gamma.crm_prd_info(
     prd_line NVARCHAR (50), 
     prd_start_dt DATETIME, 
     prd_end_dt DATETIME,
-    dwh_create_date DATETIME2 DEFAULT GETDATE());
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
 
 IF OBJECT_ID('gamma.crm_sales_details', 'U') IS NOT NULL
 DROP TABLE gamma.crm_sales_details;
@@ -48,14 +54,15 @@ DROP TABLE gamma.crm_sales_details;
 CREATE TABLE gamma.crm_sales_details(
     sls_ord_num NVARCHAR (50),
     sls_prd_key	NVARCHAR (50),
-    sls_cust_id	INT,
-    sls_order_dt INT,
-    sls_ship_dt	INT,
-    sls_due_dt INT,
+    prd_key_master NVARCHAR(50),  -- ADDED DERIVED COLUMN (does NOT exist in Beta)
+    sls_cust_id	INT, 
+    sls_order_dt DATE, -- FIXED DATA TYPE FROM INT TO DATE
+    sls_ship_dt	DATE, -- FIXED DATA TYPE FROM INT TO DATE
+    sls_due_dt DATE, -- FIXED DATA TYPE FROM INT TO DATE
     sls_sales INT,
     sls_quantity INT,
     sls_price INT,
-    dwh_create_date DATETIME2 DEFAULT GETDATE());
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
 
 IF OBJECT_ID('gamma.erp_cust_az12', 'U') IS NOT NULL
 DROP TABLE gamma.erp_cust_az12;
@@ -64,7 +71,7 @@ CREATE TABLE gamma.erp_cust_az12(
     CID	NVARCHAR (50),
     BDATE DATE,
     GEN NVARCHAR (50),
-    dwh_create_date DATETIME2 DEFAULT GETDATE());
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
 
 IF OBJECT_ID('gamma.erp_loc_a101', 'U') IS NOT NULL
 DROP TABLE gamma.erp_loc_a101;
@@ -72,7 +79,7 @@ DROP TABLE gamma.erp_loc_a101;
 CREATE TABLE gamma.erp_loc_a101(
     CID	NVARCHAR (50),
     CNTRY NVARCHAR (50),
-        dwh_create_date DATETIME2 DEFAULT GETDATE());
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
 
 IF OBJECT_ID('gamma.erp_px_cat_g1v2', 'U') IS NOT NULL
 DROP TABLE gamma.erp_px_cat_g1v2;
@@ -82,5 +89,5 @@ CREATE TABLE gamma.erp_px_cat_g1v2(
     CAT	NVARCHAR (50),
     SUBCAT	NVARCHAR (50),
     MAINTENANCE NVARCHAR (50),
-    dwh_create_date DATETIME2 DEFAULT GETDATE());
+    dwh_create_date DATETIME2 DEFAULT GETDATE()); -- ADDED METADATA
 GO
