@@ -82,13 +82,13 @@ BEGIN
         PRINT 'Loading ERP Tables';
         PRINT '--------------------------------------------------------------------------------------';
 
-        PRINT '>> Truncating Table: beta.erp_CUST_AZ12';
+        PRINT '>> Truncating Table: beta.erp_cust_az12';
 
-        TRUNCATE TABLE beta.erp_CUST_AZ12;
+        TRUNCATE TABLE beta.erp_cust_az12;
 
-        PRINT '>> Inserting Data Into Table: erp_CUST_AZ12';
+        PRINT '>> Inserting Data Into Table: beta.erp_cust_az12';
 
-        BULK INSERT beta.erp_CUST_AZ12
+        BULK INSERT beta.erp_cust_az12
         FROM 'C:\SQLData\DWH_Project\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
         WITH (
             FIRSTROW = 2,
@@ -96,13 +96,13 @@ BEGIN
             ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
-        PRINT '>> Truncating Table: beta.erp_LOC_A101';
+        PRINT '>> Truncating Table: beta.erp_loc_a101';
 
-        TRUNCATE TABLE beta.erp_LOC_A101;
+        TRUNCATE TABLE beta.erp_loc_a101;
 
-        PRINT '>> Inserting Data Into Table: erp_LOC_A101';
+        PRINT '>> Inserting Data Into Table: beta.erp_loc_a101';
 
-        BULK INSERT beta.erp_LOC_A101
+        BULK INSERT beta.erp_loc_a101
         FROM 'C:\SQLData\DWH_Project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
         WITH (
             FIRSTROW = 2,
@@ -110,13 +110,13 @@ BEGIN
             ROWTERMINATOR = '0x0D0A',
             TABLOCK);
 
-        PRINT '>> Truncating Table: beta.erp_PX_CAT_G1V2';
+        PRINT '>> Truncating Table: beta.erp_px_cat_g1v2';
 
-        TRUNCATE TABLE beta.erp_PX_CAT_G1V2;
+        TRUNCATE TABLE beta.erp_px_cat_g1v2;
 
-        PRINT '>> Inserting Data Into Table: PX_CAT_G1V2';
+        PRINT '>> Inserting Data Into Table: beta.erp_px_cat_g1v2';
 
-        BULK INSERT beta.erp_PX_CAT_G1V2
+        BULK INSERT beta.erp_px_cat_g1v2
         FROM 'C:\SQLData\DWH_Project\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
         WITH (
             FIRSTROW = 2,
@@ -126,10 +126,11 @@ BEGIN
     END TRY
     BEGIN CATCH
         PRINT '======================================================================================';
-        PRINT 'ERROR OCCURED DURING LOADING BETA LAYER';
+        PRINT 'ERROR OCCURRED DURING LOADING BETA LAYER';
         PRINT ERROR_MESSAGE();
         PRINT CAST(ERROR_NUMBER() AS NVARCHAR);
         PRINT CAST(ERROR_STATE() AS NVARCHAR);
+
         PRINT '======================================================================================';
     END CATCH
 END
